@@ -1,66 +1,61 @@
-# 🐍 Snake Game
+# Snake Game
 
-A modern desktop implementation of the classic **Snake** game developed in **Java** using **JavaFX**.
+A modern desktop implementation of the classic **Snake** game developed in **Java** using **JavaFX**. 
 
 The project combines classic gameplay mechanics with a graphical user interface, adjustable game speed, persistent high scores and custom graphics.
 
-## 🎬 Gameplay Preview
+## Game Rules
 
-> Add a GIF showing the game in action here.
->
-> Replace `docs/gameplay.gif` with your actual GIF file.
+The objective is to collect as many fruits as possible and achieve the highest score.
+
+Each collected fruit increases the score and makes the snake longer.
+
+The game ends when:
+
+1. the snake hits the edge of the board, or
+2. the snake collides with its own body.
+
+The player cannot immediately change direction to the opposite direction, preventing the snake from turning directly into itself.
+
+## Gameplay Preview
 
 ![Snake gameplay](docs/gameplay.gif)
 
-## 📸 Screenshots
+## Screenshots
 
 ### Main Menu
-
-Add a screenshot of the main menu below:
 
 ![Main menu](docs/screenshots/main-menu.png)
 
 ### Gameplay
 
-Add a screenshot showing the game board, snake, fruit and score:
-
 ![Gameplay](docs/screenshots/gameplay.png)
 
 ### Best Scores
-
-Add a screenshot of the best scores screen:
 
 ![Best scores](docs/screenshots/best-scores.png)
 
 ### Game Over
 
-Add a screenshot of the Game Over screen:
-
 ![Game Over](docs/screenshots/game-over.png)
 
-> **How to add your screenshots:** create the `docs/screenshots` folder in the repository and upload the corresponding `.png` files using the names above. For the gameplay animation, upload `gameplay.gif` to the `docs` folder.
-
-## 🎮 Features
+## Features
 
 - Classic Snake gameplay
 - Four-directional movement using:
-  - `W` / `↑` — move up
-  - `S` / `↓` — move down
-  - `A` / `←` — move left
-  - `D` / `→` — move right
+  - `W` / `↑` - move up
+  - `S` / `↓` - move down
+  - `A` / `←` - move left
+  - `D` / `→` - move right
 - Adjustable snake speed
 - Collision detection with board boundaries and the snake's own body
 - Randomly generated fruits
 - Score tracking
 - Persistent **Best Scores** ranking
 - Saving player names and scores
-- Game Over screen
-- Ability to start a new game or return to the main menu
-- Custom snake, fruit, logo and application icon graphics
-- Smooth image rendering for game graphics
-- MVC (Model-View-Controller) architecture
 
-## 🖥️ Interface
+
+## Interface
 
 The game consists of several screens.
 
@@ -68,10 +63,10 @@ The game consists of several screens.
 
 The main menu provides access to:
 
-- **NEW GAME** — starts a new game
-- **BEST SCORES** — displays the high-score ranking
-- **EXIT** — closes the application
-- **SPEED** — allows the player to adjust the snake's speed
+- **NEW GAME** - starts a new game
+- **BEST SCORES** - displays the high-score ranking
+- **EXIT** - closes the application
+- **SPEED** - allows the player to adjust the snake's speed
 
 ### Game
 
@@ -87,45 +82,15 @@ After the game ends, the player can:
 - start a new game,
 - return to the main menu.
 
-## 🏆 Best Scores
+## Best Scores
 
 The game stores up to **10 highest scores**.
 
 After completing a game, the player can enter their name and save the result. Scores are sorted from highest to lowest and stored locally, allowing the ranking to persist between application launches.
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 The application follows the **MVC (Model-View-Controller)** design pattern.
-
-```text
-src/
-└── main/
-    ├── java/
-    │   ├── model/
-    │   │   ├── Directions.java
-    │   │   ├── Fields.java
-    │   │   ├── Fruits.java
-    │   │   └── Snake.java
-    │   │
-    │   ├── score/
-    │   │   ├── ScoreEntry.java
-    │   │   └── ScoreManager.java
-    │   │
-    │   └── snake/
-    │       ├── SnakeController.java
-    │       ├── SnakeModel.java
-    │       └── SnakeView.java
-    │
-    └── resources/
-        ├── images/
-        │   ├── apple.png
-        │   ├── head.png
-        │   ├── snake_icon.png
-        │   └── snake_logo.png
-        │
-        └── styles/
-            └── styles.css
-```
 
 ### Model
 
@@ -147,16 +112,15 @@ It handles menus, the game board, snake and fruit graphics, score display, the g
 
 The controller manages the game loop and connects the model with the view.
 
-## 🛠️ Technologies
+## Technologies
 
 | Technology | Version |
 |---|---|
 | Java | 13 |
 | JavaFX | 13 |
 | Maven | 3.x |
-| Architecture | MVC |
 
-## ▶️ Running the Application
+## Running the Application
 
 ### Requirements
 
@@ -171,10 +135,9 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/mdabek2/Snake.git
-cd Snake
 ```
 
-Then run:
+Then in the SnakeGame folder run:
 
 ```bash
 mvn javafx:run
@@ -182,32 +145,3 @@ mvn javafx:run
 
 The application will start with the main menu.
 
-## 🎯 Game Rules
-
-The objective is to collect as many fruits as possible and achieve the highest score.
-
-Each collected fruit increases the score and makes the snake longer.
-
-The game ends when:
-
-1. the snake hits the edge of the board, or
-2. the snake collides with its own body.
-
-The player cannot immediately change direction to the opposite direction, preventing the snake from turning directly into itself.
-
-## 📁 Resources
-
-The project contains custom graphical resources for the game:
-
-- `snake_logo.png` — main menu logo
-- `snake_icon.png` — application icon
-- `head.png` — snake head
-- `apple.png` — fruit graphic
-
-These resources are stored in `src/main/resources/images`.
-
-## 👩‍💻 Author
-
-**Marcelina Dąbek**
-
-University project developed as part of programming coursework.
