@@ -37,7 +37,7 @@ The player cannot immediately change direction to the opposite direction, preven
 
 ### Save Your Score
 
-![Save_your score](doc/save-scores.png)
+![Save_your score](doc/save-score.png)
 
 ### Best Scores
 
