@@ -25,23 +25,33 @@ The player cannot immediately change direction to the opposite direction, preven
 
 ### Main Menu
 
-![Main menu](doc/main-menu.png)
+<p align="left">
+  <img src="doc/main-menu.png" width="500">
+</p>
 
 ### Gameplay
 
-![Gameplay](doc/gameplay.png)
+<p align="left">
+  <img src="doc/gameplay.png" width="500">
+</p>
 
 ### Game Over
 
-![Game Over](doc/game-over.png)
+<p align="left">
+  <img src="doc/game-over.png" width="500">
+</p>
 
 ### Save Your Score
 
-![Save_your score](doc/save-score.png)
+<p align="left">
+  <img src="doc/save-score.png" width="500">
+</p>
 
 ### Best Scores
 
-![Best scores](doc/best-scores.png)
+<p align="left">
+  <img src="doc/best-scores.png" width="500">
+</p>
 
 ## Features
 
