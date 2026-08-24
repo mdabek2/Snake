@@ -4,6 +4,42 @@ A modern desktop implementation of the classic **Snake** game developed in **Jav
 
 The project combines classic gameplay mechanics with a graphical user interface, adjustable game speed, persistent high scores and custom graphics.
 
+## 🎬 Gameplay Preview
+
+> Add a GIF showing the game in action here.
+>
+> Replace `docs/gameplay.gif` with your actual GIF file.
+
+![Snake gameplay](docs/gameplay.gif)
+
+## 📸 Screenshots
+
+### Main Menu
+
+Add a screenshot of the main menu below:
+
+![Main menu](docs/screenshots/main-menu.png)
+
+### Gameplay
+
+Add a screenshot showing the game board, snake, fruit and score:
+
+![Gameplay](docs/screenshots/gameplay.png)
+
+### Best Scores
+
+Add a screenshot of the best scores screen:
+
+![Best scores](docs/screenshots/best-scores.png)
+
+### Game Over
+
+Add a screenshot of the Game Over screen:
+
+![Game Over](docs/screenshots/game-over.png)
+
+> **How to add your screenshots:** create the `docs/screenshots` folder in the repository and upload the corresponding `.png` files using the names above. For the gameplay animation, upload `gameplay.gif` to the `docs` folder.
+
 ## 🎮 Features
 
 - Classic Snake gameplay
