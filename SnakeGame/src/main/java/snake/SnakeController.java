@@ -1,9 +1,12 @@
 /*
  * The Controler component of Snake game in the MVC (Model-View-Controller) design pattern.
  */
+package snake;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 
