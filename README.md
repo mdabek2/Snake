@@ -31,13 +31,17 @@ The player cannot immediately change direction to the opposite direction, preven
 
 ![Gameplay](docs/screenshots/gameplay.png)
 
-### Best Scores
-
-![Best scores](docs/screenshots/best-scores.png)
-
 ### Game Over
 
 ![Game Over](docs/screenshots/game-over.png)
+
+### Save Your Score
+
+![Save_your score](docs/screenshots/save-scores.png)
+
+### Best Scores
+
+![Best scores](docs/screenshots/best-scores.png)
 
 ## Features
 
