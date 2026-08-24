@@ -1,22 +1,17 @@
 /*
  * The Controler component of Snake game in the MVC (Model-View-Controller) design pattern.
  */
-package snake;
-
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import snake.model.*;
 
 public final class SnakeController extends Application
 {
 	private SnakeModel snakeModel;
 	private SnakeView snakeView;
-	private SnakeController thisSnakeController = this;
+	private SnakeController thisSnakeControler = this;
 	
 	private boolean failed = false;
 	
@@ -40,7 +35,7 @@ public final class SnakeController extends Application
 	{
 		this.snakeModel = new SnakeModel(30);
 		this.snakeView = new SnakeView(this.snakeModel);
-		this.snakeView.setSnakeController(this);
+		this.snakeView.setSnakeControler(this);
 		this.snakeView.start(stage);
 	}
 	
@@ -60,17 +55,17 @@ public final class SnakeController extends Application
 		// Handles all changes made to the Model during gameplay. If any error occurs, the game will pause and require access to the Menu.
 		public void run() 
 		{
-			thisSnakeController.setFailed(!snakeModel.moveSnake());
+			thisSnakeControler.setFailed(!snakeModel.moveSnake());
 			
-			if (!thisSnakeController.failed)
+			if (!thisSnakeControler.failed)
 				updateSpeed();
 			
 			snakeModel.refreshBoard();
 			snakeView.refreshBoard();
 			
-			if(thisSnakeController.failed)
+			if(thisSnakeControler.failed)
 			{
-				thisSnakeController.setFailed(false);
+				thisSnakeControler.setFailed(false);
     			executor.shutdown();
     			snakeView.showGameOver();
 			}

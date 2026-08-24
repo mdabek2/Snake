@@ -1,7 +1,6 @@
 /*
  * The View component of Snake game in the MVC (Model-View-Controller) design pattern.
  */
-package snake;
 
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -23,13 +22,7 @@ import javafx.scene.image.ImageView;
 import java.awt.Point;
 import java.util.List;
 
-import snake.score.ScoreEntry;
-import snake.score.ScoreManager;
-
-import snake.model.*;
-
-public class SnakeView 
-{
+public class SnakeView {
     private static final int WINDOW_WIDTH = 680;
     private static final int WINDOW_HEIGHT = 720;
 
@@ -37,7 +30,7 @@ public class SnakeView
     private static final int HEIGHT = 600;
 
     private SnakeModel snakeModel;
-    private SnakeController snakeController;
+    private SnakeController snakeControler;
     private ScoreManager scoreManager;
 
     private Stage stage;
@@ -61,10 +54,10 @@ public class SnakeView
     {
         this.snakeModel = snakeModel;
         this.scoreManager = new ScoreManager();
-        iconImage = new Image(getClass().getResourceAsStream("/images/snake_icon.png"));
-        logoImage = new Image(getClass().getResourceAsStream("/images/snake_logo.png"));
-        appleImage = new Image(getClass().getResourceAsStream("/images/apple.png"));
-        snakeHeadImage = new Image(getClass().getResourceAsStream("/images/head.png"));
+        iconImage = new Image(getClass().getResourceAsStream("/snake_icon.png"));
+        logoImage = new Image(getClass().getResourceAsStream("/snake_logo.png"));
+        appleImage = new Image(getClass().getResourceAsStream("/apple.png"));
+        snakeHeadImage = new Image(getClass().getResourceAsStream("/head.png"));
     }
 
 	// Start JavaFX View
@@ -127,8 +120,8 @@ public class SnakeView
         fastLabel.setAlignment(Pos.CENTER_RIGHT);
         
         speedSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            if (snakeController != null)
-                snakeController.setSpeed(newValue.intValue());
+            if (snakeControler != null)
+                snakeControler.setSpeed(newValue.intValue());
         });
 
         // Buttons
@@ -139,8 +132,8 @@ public class SnakeView
 	    newGameButton.setOnAction(event -> startGame());
         scoresButton.setOnAction(event -> showScores());
         exitButton.setOnAction(event -> {
-            if (snakeController != null)
-                snakeController.abort();
+            if (snakeControler != null)
+                snakeControler.abort();
         });
 
         // Menu
@@ -162,7 +155,7 @@ public class SnakeView
 
         menuScene = new Scene(menu, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        menuScene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
+        menuScene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         menuScene.setOnKeyPressed(event -> {
 			if (event.getCode().toString().equals("ESCAPE"))
                 Platform.exit();
@@ -206,7 +199,7 @@ public class SnakeView
         gameRoot.getChildren().add(boardBox);
 
         gameScene = new Scene( gameRoot, WINDOW_WIDTH, WINDOW_HEIGHT);
-        gameScene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
+        gameScene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
         // Keys actions
         gameScene.setOnKeyPressed(event -> {
@@ -249,7 +242,7 @@ public class SnakeView
         prepareGameScene();
         stage.setScene(gameScene);
         gameScene.getRoot().requestFocus();
-        snakeController.startGame();
+        snakeControler.startGame();
     }
 
     // Draws board
@@ -305,7 +298,7 @@ public class SnakeView
                     boolean isHead = head.equals(new Point(x, y));
                     boolean isTongue = tongue.equals(new Point(x, y));
                     
-                    // If there is a collision between the body and the tongue, draw both the body and the tongue 
+                    // If there is a collision between the body and the tounge, draw both the body and the tongue 
                     if (snakeModel.isTongueOnBody() && !isHead)
                     {
                         gc.setFill(Color.web("#2fcf83"));
@@ -482,7 +475,7 @@ public class SnakeView
         );
 
         saveScoreScene = new Scene(box, WINDOW_WIDTH, WINDOW_HEIGHT);
-        saveScoreScene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
+        saveScoreScene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         stage.setScene(saveScoreScene);
         nameField.requestFocus();
     }
@@ -541,7 +534,7 @@ public class SnakeView
         scoresBox.getChildren().addAll(title, scoresList,backButton);
 
         scoresScene = new Scene(scoresBox, WINDOW_WIDTH, WINDOW_HEIGHT);
-        scoresScene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
+        scoresScene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         stage.setScene(scoresScene);
     }
     
@@ -566,7 +559,7 @@ public class SnakeView
         });
     }
   
-    public void setSnakeController(SnakeController snakeController) {
-        this.snakeController = snakeController;
+    public void setSnakeControler(SnakeController snakeControler) {
+        this.snakeControler = snakeControler;
     }
 }
