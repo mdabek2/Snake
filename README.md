@@ -19,7 +19,9 @@ The player cannot immediately change direction to the opposite direction, preven
 
 ## Gameplay Preview
 
-![Snake gameplay](docs/gameplay.gif)
+<p align="left">
+  <img src="doc/snake_gameplay.gif" width="500">
+</p>
 
 ## Screenshots
 
