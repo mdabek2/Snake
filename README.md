@@ -67,7 +67,7 @@ The player cannot immediately change direction to the opposite direction, preven
 - Collision detection with board boundaries and the snake's own body
 - Randomly generated fruits
 - Score tracking
-- Persistent **Best Scores** ranking
+- Persistent Best Scores ranking
 - Saving player names and scores
 
 
